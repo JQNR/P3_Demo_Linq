@@ -83,8 +83,10 @@ namespace demo_linq
             var apellidosUnicos = Socios.Select(s => s.Apellido).Distinct().ToList();
 
 
-
-
+            List<Mascota> mascotasMasAncianas = Mascotas
+                                                .OrderBy(m => m.AnioNacimiento)  // Ordena por el año de nacimiento (ascendente)
+                                                .Take(5)  // Toma las 5 primeras
+                                                .ToList();
 
 
 
